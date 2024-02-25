@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int n1,n2,p,*ptr;
+    ptr=(int*)malloc(n1*sizeof(int));
+    for(int i=0;i<n1;i++){
+        printf("%pc\n",ptr+i);
+    }
+    printf("Enter new size: ");
+    scanf("%d",&n2);
+    ptr=realloc(ptr,n2*sizeof(int));
+    for(int i=0;i<n2;i++){
+        printf("%pc\n",ptr+i);
+    }
+    free(ptr);
+}
